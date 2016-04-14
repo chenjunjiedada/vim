@@ -21,15 +21,17 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " different version somewhere else.
 Plugin 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'valloric/youcompleteme'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'pangloss/vim-javascript'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'taglist.vim'
 Plugin 'YankRing.vim'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jason0x43/vim-js-indent'
 
+Plugin 'valloric/youcompleteme'
+Plugin 'jlanzarotta/bufexplorer'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -89,13 +91,16 @@ set nobackup
 set nowb
 set noswapfile
 set tabstop=4
+set shiftwidth=4
 set expandtab
+set regexpengine=1
 
 set lbr
 set tw=500
 
 set ai "Auto indent
 set si "Smart indet
+set cindent
 set wrap "Wrap lines
 set nowrap
 
@@ -186,13 +191,14 @@ au FileType python map <buffer> <leader>D ?def
 " => taglist
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
-let Tlist_Show_One_File = 0
+let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 0
+let g:Tlist_WinWidth=30
 map <leader>t :TlistToggle<cr>
 
 
-"""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "CtrlP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 'ra'
@@ -224,3 +230,12 @@ map N <plug>(easymotion-prev)
 syntax enable
 set background=dark
 colorscheme desert
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => nerd tree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>n :NERDTree<CR>:vertical res 31<CR>
+map <leader>c :NERDTreeClose<CR>
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '<'
