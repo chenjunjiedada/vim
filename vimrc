@@ -56,6 +56,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 map <leader>e :e! ~/.vimrc<cr>
+cmap w!! w !sudo tee > /dev/null % <cr>
 
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
@@ -239,3 +240,5 @@ map <leader>n :NERDTree<CR>:vertical res 31<CR>
 map <leader>c :NERDTreeClose<CR>
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '<'
+
+
