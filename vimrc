@@ -32,6 +32,8 @@ Plugin 'jason0x43/vim-js-indent'
 
 Plugin 'valloric/youcompleteme'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'fatih/vimgo'
+Plugin 'airblade/vim-gitgutter'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
